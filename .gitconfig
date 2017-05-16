@@ -1,0 +1,23 @@
+# $Id: .gitconfig,v 1.4 2013-03-14 20:56:08 grahn Exp $
+
+[user]
+	name = Jörgen Grahn
+
+[core]
+	compression = 9
+
+[color]
+	ui=auto
+
+[i18n]
+	commitencoding = ISO-8859-1
+	logoutputencoding = ISO-8859-1
+
+[push]
+	default = simple
+
+[diff]
+	submodule = log
+
+[merge]
+	conflictstyle = diff3

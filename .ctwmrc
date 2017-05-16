@@ -1,0 +1,335 @@
+# $Id: .ctwmrc,v 1.18 2015/09/21 19:29:48 grahn Exp $
+# Id: .ctwmrc,v 1.16 2000/01/05 21:50:02 grahn Exp grahn 
+# .twmrc from mdstud.chalmers.se, modified by grahn
+# using .twmrc rev 1.8, modified by grahn for ctwm 3.4pl2
+
+#**********************************************************************
+# Icons
+#**********************************************************************
+
+IconRegion      "600x80+0-0" South West 2 5
+IconDirectory   "/usr/X11R6/include/X11/bitmaps/"
+IconBorderWidth	1
+
+Icons
+{
+  "Console"     "terminal"
+  "Xterminal"   "terminal"
+  "XTerm"       "terminal"
+}
+
+UnknownIcon    "xpm:window.xpm"
+
+#**********************************************************************
+# Icon Managager
+#**********************************************************************
+
+NoIconManagers
+
+#**********************************************************************
+# ctwm-specific settings
+#**********************************************************************
+
+AutoFocusToTransients
+
+DontPaintRootWindow
+DontWarpCursorInWMap
+MaxIconTitleWidth 100
+#MoveOffResistance 50
+ReallyMoveInWorkspaceManager
+TitleJustification "center"
+
+
+#**********************************************************************
+# ctwm workspaces
+#**********************************************************************
+
+ShowWorkSpaceManager
+StartInMapState
+WarpRingOnScreen
+NoShowOccupyAll
+
+MapWindowCurrentWorkSpace
+{
+"red"
+"blue"
+}
+
+WorkSpaceManagerGeometry "96x70+0+55"
+
+WorkSpaces
+{
+"alpha" {"LightSlateGray" "white" "darkblue" "white"}
+"beta"  {"LightSlateGray" "white" "darkblue" "white"}
+"gamma" {"LightSlateGray" "white" "darkblue" "white"}
+"delta" {"LightSlateGray" "white" "darkblue" "white"}
+#"rho" {"LightSlateGray" "white" "darkblue" "white"}
+#"pi" {"LightSlateGray" "white" "darkblue" "white"}
+}
+
+OccupyAll
+{
+"xbiff"
+"xload"
+"xclock"
+}
+
+#**********************************************************************
+# Misc settings
+#**********************************************************************
+
+TitleFont	"-adobe-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1"
+IconFont	"-adobe-helvetica-medium-r-normal-*-10-*-*-*-*-*-iso8859-1"
+MenuFont	"fixed"
+ResizeFont	"fixed"
+
+ButtonIndent	0
+TitleButtonBorderWidth 1
+FramePadding	0
+TitlePadding	2
+BorderWidth	2
+NoGrabServer
+RestartPreviousState
+RandomPlacement
+Zoom		16
+DefaultFunction	f.nop
+UsePPosition	"on"            # use program-specified size hints accepted
+AutoRelativeResize              # don't require resize to cross border to start
+NoCaseSensitive                 # turn off case-sensitivity in sorting icons
+MoveDelta	0               # need to move this much before takes effect
+DecorateTransients		# put titlebars on transients
+NoMenuShadows
+DontMoveOff
+NoDefaults
+OpaqueMove			# actually move window instead of outline
+NoRaiseOnMove
+
+Pixmaps
+{
+TitleHighlight	"hlines3"
+}
+
+NoTitle
+{
+"WorkSpaceManager"
+"xclock"
+"xbiff"
+"xload"
+"xeyes"
+"xdaliclock"
+}
+
+NoHighlight
+{
+"xclock"
+"xbiff"
+"xload"
+"xeyes"
+}
+
+WindowRing
+{
+"XTerm"
+"Emacs"
+"Iceweasel"
+"Firefox"
+"opera"
+"xv"
+"gv"
+}
+
+
+#**********************************************************************
+# New functions
+#**********************************************************************
+
+Function "move-or-iconify"    { f.move f.deltastop f.iconify }
+Function "move-or-raise"      { f.move f.deltastop f.raise }
+
+#**********************************************************************
+# Keyboard bindings
+#**********************************************************************
+
+"KP_Divide" =	: window : f.iconify
+"KP_Subtract" =	: window : f.raiselower
+
+"KP_Divide" =	: icon : f.iconify
+"KP_Subtract" =	: icon : f.raiselower
+
+"KP_Multiply" =       : all : f.warpring "next"
+"Delete" = m	: all : f.warpring "next"
+"Delete" = m4	: all : f.warpring "next"
+
+"Up"          = c|m: all : f.upworkspace
+"Down"        = c|m: all : f.downworkspace
+"Left"          = c|m: all : f.leftworkspace
+"Right"        = c|m: all : f.rightworkspace
+
+"KP_Add"	= : all : f.nextworkspace
+"KP_Enter"	= : all : f.prevworkspace
+
+"Delete"      = c|m: all : !"xlock"
+
+#**********************************************************************
+# Mouse bindings
+#**********************************************************************
+
+Button1 =	: root : f.menu "program"
+Button3 =	: root : f.menu "styrfunktioner"
+
+Button1 =	: title : f.function "move-or-raise"
+Button3 =	: title : f.lower
+
+Button1 = m	: window : f.function "move-or-raise"
+Button3 = m	: window : f.lower
+
+Button1 =	: icon : f.function "move-or-iconify"
+Button3 = 	: icon : f.lower
+Button1 = m	: icon : f.function "move-or-iconify"
+Button3 = m	: icon : f.lower
+
+
+#**********************************************************************
+# Titlebar
+#**********************************************************************
+
+LeftTitleButton ":iconify" = f.delete
+
+RightTitleButton "/usr/local/include/X11/bitmaps/iconify.bm" = f.iconify
+RightTitleButton "/usr/local/include/X11/bitmaps/arrowud.bm" = f.zoom
+RightTitleButton ":resize" = f.resize
+
+
+#**********************************************************************
+# Application menu
+#**********************************************************************
+
+menu "program"
+{
+"Programs"		f.title
+#------
+"XTerm"			!"xterm &"
+"GNU Emacs"		!"emacs &"
+"------"		f.separator
+"firefox"		!"firefox -P default -no-remote >/dev/null &"
+"Opera"			!"nice opera &"
+"------"		f.separator
+"xzoom"			!"xzoom &"
+"xv"			!"xv &"
+"djview"		!"djview -fn fixed &"
+"evince"		!"evince &"
+"GIMP"			!"gimp &"
+"------"		f.separator
+"xset m 4"		!"xset m 4"
+"xset m 2"              !"xset m 2"
+"------"                f.separator
+"XLock"			f.menu "xlock"
+"DPMS off"		!"sleep 2 && xset dpms force off"
+}
+
+menu "xlock"
+{
+"XLock"		f.title
+#------
+"*blank screen"	!"xlock -nolock -mode blank &"
+"------"	f.separator
+"random"	!"xlock &"
+"bouboule"	!"xlock -mode bouboule &"
+"julia"		!"xlock -mode julia &"
+"laser"		!"xlock -mode laser &"
+"lightning"	!"xlock -mode lightning &"
+"slip"		!"xlock -mode slip &"
+"blot"		!"xlock -mode blot &"
+}
+
+
+#**********************************************************************
+# Control menu
+#**********************************************************************
+
+menu "styrfunktioner"
+{
+"X Control"		f.title
+#------
+"Identify Window ."	f.identify
+"Refresh screen"	f.refresh
+"------"		f.separator
+"Window control"	f.menu "WOps"
+"------"		f.separator
+"Ring ."		f.ring
+"Autolower ."		f.autolower
+"Occupy ."		f.occupyall
+"Resize ."		f.resize
+"Restart ctwm"		f.restart
+"Toggle Workspace"	f.toggleworkspacemgr
+"------"		f.separator
+"Quit"			f.quit
+}
+
+menu "WOps"
+{
+"Window Control"	f.title
+#------
+"Destroy"		f.destroy
+"Refresh"		f.winrefresh
+"Zoom"			f.zoom
+"(De)iconify"		f.iconify
+"Move"			f.move
+"Resize"		f.resize
+"Raise"			f.raise
+"Lower"			f.lower
+"(Un)focus"		f.focus
+}
+
+
+#**********************************************************************
+# Color definitions
+#**********************************************************************
+
+Color {
+BorderColor		"red"
+BorderTileForeground	"LightGray"
+BorderTileBackground	"LightGray"
+TitleForeground		"black"
+TitleBackground		"LightGray"
+MenuForeground		"black"
+MenuBackground		"LightGray"
+MenuTitleForeground	"black"
+MenuTitleBackground	"LightGray"
+MenuShadowColor		"black"
+IconManagerForeground	"black"
+IconManagerBackground	"LightGray"
+IconForeground		"black"
+IconBackground		"LightGray"
+IconBorderColor		"black"
+}
+
+Monochrome {
+BorderColor		"black"
+BorderTileForeground	"black"
+BorderTileBackground	"white"
+TitleForeground		"black"
+TitleBackground		"white"
+MenuForeground		"black"
+MenuBackground		"white"
+MenuTitleForeground	"white"
+MenuTitleBackground	"black"
+MenuShadowColor		"black"
+IconManagerForeground	"white"
+IconManagerBackground	"black"
+IconForeground		"black"
+IconBackground		"white"
+IconBorderColor		"black"
+}
+
+SaveColor
+{
+"white"
+"black"
+"LightGray"
+}
+
+
+#**********************************************************************
+# END
+#**********************************************************************

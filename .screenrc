@@ -1,0 +1,21 @@
+# $Id: .screenrc,v 1.3 2006/09/17 14:02:47 grahn Exp $
+
+startup_message off
+nethack on
+defscrollback 8000
+
+bind ^X
+bind x
+
+# An alternative hardstatus to display a bar at the bottom listing the
+# windownames and highlighting the current windowname in blue. (This is only
+# enabled if there is no hardstatus setting for your terminal)
+#
+#hardstatus lastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+hardstatus string "[screen %n%?: %t%?] %h"
+
+# To get screen to add lines to xterm's scrollback buffer, uncomment the
+# following termcapinfo line which tells xterm to use the normal screen buffer
+# (which has scrollback), not the alternate screen buffer.
+#
+#termcapinfo xterm|xterms|xs|rxvt ti@:te@
