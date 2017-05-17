@@ -1,0 +1,10 @@
+[A-Za-z]*/
+.xvpics/
+.*history
+.lesshst
+.xsession-errors
+.Xauthority
+.zcompdump
+.ssh/id_*
+.ssh/*.old
+.gnupg/*
