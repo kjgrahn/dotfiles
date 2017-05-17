@@ -80,3 +80,5 @@ gv.scales: Natural size, 1.000, screen\n\
 ! the gnuplot green and cyan lines are too light
 gnuplot*line2Color: green,.8
 gnuplot*line5Color: #30a0c0
+
+#include "NetHack.ad"
