@@ -4,7 +4,7 @@
 *customization: -color
 #endif
 
-Emacs*Background: #303080
+Emacs*Background: #101080
 Emacs*Foreground: #ffffd0
 Emacs*pointerColor: #ffffd0
 Emacs*cursorColor: #ffffd0
