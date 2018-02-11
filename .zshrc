@@ -16,6 +16,8 @@ export CVS_RSH=ssh
 export CVSEDITOR=/usr/bin/vi
 export RSYNC_RSH=ssh
 export GNUTERM=x11
+# less gcc bolding, so I can still find my prompt easily
+export GCC_COLORS='error=0;31:warning=0;35:note=0;36:caret=0;32:locus=0:quote=01'
 
 alias pd=pushd
 alias sx='screen -x'
