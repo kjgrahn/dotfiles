@@ -208,8 +208,10 @@ menu "program"
 {
 "Programs"		f.title
 #------
-"XTerm"			!"xterm &"
-"GNU Emacs"		!"emacs &"
+"XTerm"			!"LC_CTYPE=sv_SE xterm &"
+"GNU Emacs"		!"LC_CTYPE=sv_SE emacs &"
+"XTerm (utf8)"		!"xterm &"
+"GNU Emacs (utf8)"	!"emacs &"
 "------"		f.separator
 "firefox"		!"firefox -P default -no-remote >/dev/null &"
 "Opera"			!"nice opera &"
