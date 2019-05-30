@@ -21,3 +21,6 @@
 
 [merge]
 	conflictstyle = diff3
+
+[alias]
+	lg = "log --color --graph --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) <%an>%Creset' --abbrev-commit"
