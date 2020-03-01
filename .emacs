@@ -127,6 +127,7 @@
 (setq default-major-mode 'text-mode)
 (auto-compression-mode 1)
 (global-font-lock-mode 1)
+(setq sentence-end-double-space nil)
 
 (setq sgml-basic-offset 0)
 
