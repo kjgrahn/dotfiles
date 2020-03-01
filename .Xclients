@@ -9,10 +9,6 @@ xset m 1
 xset r rate 280 36
 xset b 20 100 20
 
-if [ -d /usr/X11R6/lib/X11/fonts/freefont ]; then
-    xset -fp /usr/X11R6/lib/X11/fonts/freefont/
-fi
-
 if [ -r $HOME/background/default ]; then
     (sleep 3; xv -root -quit -rmode 2 $HOME/background/default)&
 else
