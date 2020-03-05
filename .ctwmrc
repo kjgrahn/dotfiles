@@ -1,3 +1,4 @@
+# -*- conf -*-
 # $Id: .ctwmrc,v 1.18 2015/09/21 19:29:48 grahn Exp $
 # Id: .ctwmrc,v 1.16 2000/01/05 21:50:02 grahn Exp grahn 
 # .twmrc from mdstud.chalmers.se, modified by grahn
@@ -169,8 +170,6 @@ Function "move-or-raise"      { f.move f.deltastop f.raise }
 "KP_Add"	= : all : f.nextworkspace
 "KP_Enter"	= : all : f.prevworkspace
 
-"Delete"      = c|m: all : !"xlock"
-
 #**********************************************************************
 # Mouse bindings
 #**********************************************************************
@@ -215,7 +214,7 @@ menu "program"
 "GNU Emacs (utf8)"	!"emacs &"
 "------"		f.separator
 "firefox"		!"firefox -P default -no-remote >/dev/null &"
-"Opera"			!"nice opera &"
+"firefox -P"		!"firefox -P -no-remote >/dev/null &"
 "------"		f.separator
 "xzoom"			!"xzoom &"
 "xv"			!"xv &"
@@ -226,23 +225,7 @@ menu "program"
 "xset m 4"		!"xset m 4"
 "xset m 2"              !"xset m 2"
 "------"                f.separator
-"XLock"			f.menu "xlock"
 "DPMS off"		!"sleep 2 && xset dpms force off"
-}
-
-menu "xlock"
-{
-"XLock"		f.title
-#------
-"*blank screen"	!"xlock -nolock -mode blank &"
-"------"	f.separator
-"random"	!"xlock &"
-"bouboule"	!"xlock -mode bouboule &"
-"julia"		!"xlock -mode julia &"
-"laser"		!"xlock -mode laser &"
-"lightning"	!"xlock -mode lightning &"
-"slip"		!"xlock -mode slip &"
-"blot"		!"xlock -mode blot &"
 }
 
 
