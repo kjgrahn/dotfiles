@@ -20,7 +20,7 @@ xterm*cursorColor: #ffffd0
 xterm*reverseVideo: false
 xterm*scrollBar: true
 xterm*reverseWrap: true
-xterm*font: fixed
+xterm*font: -misc-fixed-medium-r-semicondensed--0-0-75-75-c-0-iso10646-1
 xterm*fullCursor: true
 xterm*scrollTtyOutput: off
 xterm*scrollKey: on
