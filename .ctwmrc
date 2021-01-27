@@ -196,6 +196,7 @@ Button3 = m	: icon : f.lower
 LeftTitleButton ":iconify" = f.delete
 
 RightTitleButton "/usr/local/include/X11/bitmaps/iconify.bm" = f.iconify
+RightTitleButton "/usr/local/include/X11/bitmaps/arrowlr.bm" = f.horizoom
 RightTitleButton "/usr/local/include/X11/bitmaps/arrowud.bm" = f.zoom
 RightTitleButton ":resize" = f.resize
 
