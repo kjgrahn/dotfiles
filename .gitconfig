@@ -13,6 +13,9 @@
 	commitencoding = ISO-8859-1
 	logoutputencoding = ISO-8859-1
 
+[init]
+	defaultBranch = master
+
 [push]
 	default = simple
 
