@@ -3,7 +3,7 @@
 
 xterm +sb -geometry 80x90-0-0 &
 xclock -fg cyan -bg darkblue -d -brief -padding 1 -geometry 60x52+0+0 &
-xload  -fg cyan -bg darkblue -hl red -update 3 -geometry 107x52+62+0 &
+xload  -fg cyan -bg darkblue -hl red -update 3 -geometry 180x52+62+0 &
 
 xset m 1
 xset r rate 280 36
