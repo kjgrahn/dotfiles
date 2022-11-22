@@ -22,7 +22,7 @@ export GCC_COLORS='error=0;31:warning=0;35:note=0;36:caret=0;32:locus=0:quote=01
 alias pd=pushd
 alias sx='screen -x'
 
-PROMPT="%B%6F%m:%2~%%%f%b "
+PROMPT="%B%6F%m:%2~%0(?.%%.%F{red}%%)%f%b "
 #RPROMPT="%B%2c%b"
 
 export HISTSIZE=2000
