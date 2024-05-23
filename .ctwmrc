@@ -103,6 +103,7 @@ NoMenuShadows
 DontMoveOff
 NoDefaults
 OpaqueMove			# actually move window instead of outline
+NoOpaqueResize
 NoRaiseOnMove
 
 Pixmaps
